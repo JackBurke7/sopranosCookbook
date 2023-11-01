@@ -1,0 +1,22 @@
+<!-- show.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= recipe.title %></title>
+</head>
+<body>
+  <h1><%= recipe.title %></h1>
+  <img src="<%= recipe.image %>" alt="<%= recipe.title %>" width="400" height="300">
+  <p>Description: <%= recipe.description %></p>
+  <p>Season <%= recipe.season %>, Episode <%= recipe.episode %></p>
+  <h2>Instructions:</h2>
+  <ol>
+    <% recipe.instructions.forEach((instruction) => { %>
+      <li><%= instruction %></li>
+    <% }); %>
+  </ol>
+
+  <p><a href="/ingredients/<%= recipe._id %>/ingredients">Ingredients</a></p>
+
+</body>
+</html>

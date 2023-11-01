@@ -1,0 +1,20 @@
+<!-- recipes.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipes</title>
+</head>
+<body>
+  <h1>Recipes</h1>
+  <ul>
+    <% recipes.forEach((recipe) => { %>
+      <li>
+        <h2><%= recipe.title %></h2>
+        <img src="<%= recipe.image %>" alt="<%= recipe.title %>" width="200" height="150">
+        <p>Season <%= recipe.season %>, Episode <%= recipe.episode %></p>
+        <a href="/recipes/<%= recipe._id %>">View Recipe</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
