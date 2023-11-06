@@ -1,22 +1,35 @@
-<!-- show.ejs -->
 <!DOCTYPE html>
 <html>
 <head>
   <title><%= recipe.title %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-  <h1><%= recipe.title %></h1>
-  <img src="<%= recipe.image %>" alt="<%= recipe.title %>" width="400" height="300">
-  <p>Description: <%= recipe.description %></p>
-  <p>Season <%= recipe.season %>, Episode <%= recipe.episode %></p>
-  <h2>Instructions:</h2>
-  <ol>
-    <% recipe.instructions.forEach((instruction) => { %>
-      <li><%= instruction %></li>
-    <% }); %>
-  </ol>
-
-  <p><a href="/ingredients/<%= recipe._id %>/ingredients">Ingredients</a></p>
-
+  <div class="container mt-5">
+    <h1 class="display-4"><%= recipe.title %></h1>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="<%= recipe.image %>" alt="<%= recipe.title %>" class="img-fluid" />
+      </div>
+      <div class="col-md-6">
+        <p class="lead">Description: <%= recipe.description %></p>
+        <p>Season <%= recipe.season %>, Episode <%= recipe.episode %></p>
+        <h2>Instructions:</h2>
+        <ol>
+          <% recipe.instructions.forEach((instruction) => { %>
+            <li><%= instruction %></li>
+          <% }); %>
+        </ol>
+        <a class="btn btn-primary" href="/ingredients/<%= recipe._id %>/ingredients">View Ingredients</a>
+        <form action="/recipes/<%= recipe._id %>/edit" method="POST"
+          <input type="text" name="title" value="<%= recipe.title %>">
+          <input type="text" name="description" value="<%= recipe.description %>">
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
