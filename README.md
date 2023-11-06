@@ -20,7 +20,7 @@ My Recipe App is a web application that allows users to explore and discover del
 
 You can access the deployed app by visiting [My Recipe App](https://your-app-url.com).
 
-For project planning, you can refer to our Trello board: [Project Trello Board](https://trello.com/your-trello-board-link)
+For project planning, you can refer to our Trello board: [Project Trello Board](https://lucid.app/lucidchart/d97aef99-6322-40ea-b8be-11cfee352027/edit?page=YTSHb5bvbcUC&invitationId=inv_bcb667dd-9ff5-4d72-8b86-4ed32f4f3435#)
 
 ## Next Steps
 
